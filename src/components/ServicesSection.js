@@ -78,7 +78,7 @@ const Card = styled.div`
             padding: 1rem;
         }
         img, svg {
-            width: 2rem;
+            width: 2.5rem;
         }
     }
 `

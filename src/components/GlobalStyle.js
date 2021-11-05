@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 body {
     background: #181818;
     font-family: 'Inter', sans-serif;
+    font-size: 62.5%;
 }
 
 button {
@@ -37,7 +38,7 @@ h3 {
 }
 h4 {
     font-weight: bold;
-    
+    font-size: 2rem;
 }
 a {
     font-size: 1.1rem;
