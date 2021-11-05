@@ -2,7 +2,7 @@ import clock from '../img/clock.svg';
 import money from '../img/money.svg';
 import chicken from '../img/chicken.svg';
 import blood from '../img/blood.svg';
-import home2 from '../img/home2.png';
+import home2 from '../img/home2.jpg';
 
 const ServicesSection = () => {
 
