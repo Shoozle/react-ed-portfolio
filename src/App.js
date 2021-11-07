@@ -3,7 +3,7 @@ import Nav from "./components/Nav";
 import AboutUs from "./pages/AboutUs";
 import OurWork from './pages/OurWork';
 import ContactUs from './pages/ContactUs'
-import { Switch, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
