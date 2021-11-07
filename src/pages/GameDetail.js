@@ -11,15 +11,29 @@ const GameDetail = () => {
     const [game, setGame] = useState(null);
 
     useEffect(() => {
-        const currentGame = games.filter((stateGame) => stateGame.url === id)
-        setGame(currentGame)
-    },[games, useParams.id])
+        const currentGame = games.filter((stateGame) => stateGame.url.includes(id))
+        setGame(currentGame[0])
+    }, [games, id])
 
     return (
-        <div>
-            <h1>Game Details</h1>
-        </div>
+        <> {game && (
+            <Details>
+                <Headline>
+                    <h2>{game.title}</h2>
+                    <img src={game.mainImg} />
+                </Headline>
+            </Details>
+        )}
+        </>
     )
 }
+
+const Details = styled.div`
+
+`
+
+const Headline = styled.div`
+
+`
 
 export default GameDetail;
