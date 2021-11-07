@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import frank1 from "../img/frank.jpg";
-import frank2 from "../img/frank2.jpg";
-import frank3 from "../img/frank3.jpg";
+import deadRising from "../img/deadrising.jpg";
+import planescape from "../img/Planescape.jpg";
+import theHunter from "../img/theHunter.jpg";
 
 import { Link } from "react-router-dom";
 
@@ -13,22 +13,22 @@ const OurWork = () => {
             <Movie>
                 <h2>Dead Rising</h2>
                 <div className="line"></div>
-                <Link to="/">
-                    <img src={frank1} alt="frank" />
+                <Link to="/work/dead-rising">
+                    <img src={deadRising} alt="frank" />
                 </Link>
             </Movie>
             <Movie>
-                <h2>Off The Record</h2>
+                <h2>Planescape</h2>
                 <div className="line"></div>
-                <Link to="/">
-                    <img src={frank2} alt="frank2" />
+                <Link to="/work/planescape-torment">
+                    <img src={planescape} alt="planescape" />
                 </Link>
             </Movie>
             <Movie>
-                <h2>Balan</h2>
+                <h2>theHunter</h2>
                 <div className="line"></div>
-                <Link to="/">
-                    <img src={frank3} alt="frank3" />
+                <Link to="/work/theHunter">
+                    <img src={theHunter} alt="theHunter" />
                 </Link>
             </Movie>
         </Work>
