@@ -24,6 +24,9 @@ const GameDetail = () => {
                     <Awards>
                     {game.awards.map((award) => (<Award award={award.award} publication={award.publication} key={award.title} />))}
                     </Awards>
+                    <ImageDisplay>
+                        <img src={game.mainImg} alt={game.title}/>
+                    </ImageDisplay>
                 </Headline>
             </Details>
         )}
@@ -41,7 +44,7 @@ const Headline = styled.div`
     position: relative;
     h2 {
         position: absolute;
-        top: 10%;
+        top: 6%;
         left: 50%;
         transform: translate(-50%, -100%);
     }
@@ -65,13 +68,31 @@ const AwardStyle = styled.div`
     h3 {
         font-size: 2rem;
     }
+    .line {
+        width: 100%;
+        background: #23d997;
+        height: .5rem;
+        margin: 1rem 0rem;
+    }
+    p {
+        padding: 2rem 0;
+    }
 `
 
-const Award = ({title, publication}) => {
+const ImageDisplay = styled.div`
+    min-height: 50vh;
+    img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+`
+
+const Award = ({award, publication}) => {
     return (
         <AwardStyle>
-            <h3>{title}</h3>
-            <div className="award"></div>
+            <h3>{award}</h3>
+            <div className="line"></div>
             <p>{publication}</p>
         </AwardStyle>
     )
