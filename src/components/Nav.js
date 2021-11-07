@@ -3,11 +3,11 @@ import styled from 'styled-components';
 const Nav = () => {
     return (
         <StyledNav>
-            <h1 className="logo"><a href="#">Pedro</a></h1>
+            <h1 className="logo"><a href="/">Pedro</a></h1>
             <ul>
-                <li><a href="#">Our Work</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="/">About Us</a></li>
+                <li><a href="/work">Projects</a></li>
+                <li><a href="/contact">Contact Us</a></li>
             </ul>
         </StyledNav>
     )
