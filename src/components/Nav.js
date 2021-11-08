@@ -22,6 +22,9 @@ const StyledNav = styled.nav`
     align-items: center;
     padding: 1rem 10rem;
     background-color: #282828;
+    position: sticky;
+    top: 0;
+    z-index: 99;
     .logo {
         font-size: 1.8rem;
         font-family: "Lobster", cursive;
