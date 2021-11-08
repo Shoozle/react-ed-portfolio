@@ -6,9 +6,12 @@ import theHunter from "../img/theHunter.jpg";
 
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion"
+import { pageAnimation } from "../animation"
+
 const OurWork = () => {
     return (
-        <Work>
+        <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <h1>Our Work</h1>
             <Movie>
                 <h2>Dead Rising</h2>
@@ -35,11 +38,12 @@ const OurWork = () => {
     )
 }
 
-const Work = styled.div`
+const Work = styled(motion.div)`
     min-height: 100vh;
     overflow: hidden;
     padding: 5rem 10rem;
-    background-color: wheat;
+    background-color: #181818;
+    color: white;
 `
 
 const Movie = styled.div`

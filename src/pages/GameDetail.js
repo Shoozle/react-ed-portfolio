@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { GameState } from "../gameState";
 import { useEffect, useState } from "react";
 
+import { motion } from "framer-motion"
+import { pageAnimation } from "../animation"
+
 const GameDetail = () => {
     const history = useParams();
     const id = history.id;
@@ -17,12 +20,12 @@ const GameDetail = () => {
 
     return (
         <> {game && (
-            <Details>
+            <Details variants={pageAnimation} initial="hidden" animate="show" exit="exit">
                 <Headline>
                     <h2>{game.title}</h2>
                     <img src={game.mainImg} alt={game.title}/>
                     <Awards>
-                    {game.awards.map((award) => (<Award award={award.award} publication={award.publication} key={award.title} />))}
+                    {game.awards.map((award) => (<Award award={award.award} publication={award.publication} key={award.award} />))}
                     </Awards>
                     <ImageDisplay>
                         <img src={game.mainImg} alt={game.title}/>
@@ -34,7 +37,7 @@ const GameDetail = () => {
     )
 }
 
-const Details = styled.div`
+const Details = styled(motion.div)`
     color: white;
 `
 
