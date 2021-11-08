@@ -7,8 +7,13 @@ import { Link } from "react-router-dom";
 import { Hide } from "../styles";
 import { motion } from "framer-motion"
 import { sliderContainer, slider, fade, pageAnimation, photoAnim, lineAnim } from "../animation"
+import { useScroll } from "../components/useScroll";
 
 const OurWork = () => {
+
+    const [element, controls] = useScroll();
+    const [element2, controls2] = useScroll();
+
     return (
         <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <motion.div variants={sliderContainer}>
@@ -17,7 +22,7 @@ const OurWork = () => {
                 <Frame3 variants={slider}></Frame3>
                 <Frame4 variants={slider}></Frame4>
             </motion.div>
-            <Movie>
+            <Game>
                 <motion.h2 variants={fade}>Dead Rising</motion.h2>
                 <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/dead-rising">
@@ -25,21 +30,21 @@ const OurWork = () => {
                     <motion.img variants={photoAnim} src={deadRising} alt="frank" />
                     </Hide>
                 </Link>
-            </Movie>
-            <Movie>
+            </Game>
+            <Game ref={element} variants={fade} animate={controls} initial="hidden">
                 <motion.h2 variants={fade}>Planescape</motion.h2>
                 <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/planescape-torment">
                     <motion.img variants={photoAnim} src={planescape} alt="planescape" />
                 </Link>
-            </Movie>
-            <Movie>
+            </Game>
+            <Game ref={element2} variants={fade} animate={controls2} initial="hidden">
                 <motion.h2 variants={fade}>theHunter</motion.h2>
                 <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/theHunter">
                     <motion.img variants={photoAnim} src={theHunter} alt="theHunter" />
                 </Link>
-            </Movie>
+            </Game>
         </Work>
     )
 }
@@ -52,7 +57,7 @@ const Work = styled(motion.div)`
     color: white;
 `
 
-const Movie = styled.div`
+const Game = styled(motion.div)`
     padding-bottom: 10rem;
     .line {
         height: .5rem;
