@@ -9,22 +9,16 @@ import { Description, About, Image } from '../styles';
 
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
-import { fade } from '../animation';
+import { scrollReveal } from '../animation';
+
+import { useScroll } from './useScroll';
 
 const ServicesSection = () => {
-    const controls = useAnimation();
-    const [element, view] = useInView({threshold: 0.5});
 
-    console.log(view);
-
-    if (view) {
-        controls.start('show')
-    } else {
-        controls.start('hidden')
-    }
+    const [element, controls] = useScroll();
 
     return (
-        <Services variants={fade} animate={controls} initial="hidden" ref={element}>
+        <Services variants={scrollReveal} animate={controls} initial="hidden" ref={element}>
             <Description>
                 <h2>High <span>Quality</span> Services</h2>
                 <Cards>
