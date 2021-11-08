@@ -2,6 +2,7 @@ import home1 from '../../src/img/Man.jpg'
 import { Hide, Description, About, Image } from '../styles';
 import { motion } from 'framer-motion';
 import { titleAnimation, fade, photoAnim } from '../animation';
+import Wave from './Wave';
 
 const AboutSection = () => {
 
@@ -27,6 +28,7 @@ const AboutSection = () => {
             <Image>
                 <motion.img variants={photoAnim} src={home1} alt="Angry witcher guy"></motion.img>
             </Image>
+            <Wave />
         </About>
     )
 }
