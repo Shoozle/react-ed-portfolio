@@ -45,6 +45,7 @@ const OurWork = () => {
                     <motion.img variants={photoAnim} src={theHunter} alt="theHunter" />
                 </Link>
             </Game>
+            
         </Work>
     )
 }

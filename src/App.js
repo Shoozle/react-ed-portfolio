@@ -8,6 +8,7 @@ import GameDetail from "./pages/GameDetail";
 
 //Needed for anim exits
 import { AnimatePresence } from "framer-motion";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
 
@@ -15,8 +16,9 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
       <GlobalStyle />
+      <Nav />
+      <ScrollTop/>
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<AboutUs />} />

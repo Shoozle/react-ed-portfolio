@@ -61,6 +61,7 @@ const Social = styled(motion.dv)`
     align-items: center;
     h2 {
         margin: 2rem;
+        color: wheat;
     }
 `
 

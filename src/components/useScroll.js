@@ -6,8 +6,6 @@ export const useScroll = () => {
     const controls = useAnimation();
     const [element, view] = useInView({threshold: 0.5});
 
-    console.log(view);
-
     if (view) {
         controls.start('show')
     } else {
