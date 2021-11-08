@@ -3,35 +3,41 @@ import styled from "styled-components";
 import deadRising from "../img/deadrising.jpg";
 import planescape from "../img/Planescape.jpg";
 import theHunter from "../img/theHunter.jpg";
-
 import { Link } from "react-router-dom";
-
+import { Hide } from "../styles";
 import { motion } from "framer-motion"
-import { pageAnimation } from "../animation"
+import { sliderContainer, slider, fade, pageAnimation, photoAnim, lineAnim } from "../animation"
 
 const OurWork = () => {
     return (
         <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
-            <h1>Our Work</h1>
+            <motion.div variants={sliderContainer}>
+                <Frame1 variants={slider}></Frame1>
+                <Frame2 variants={slider}></Frame2>
+                <Frame3 variants={slider}></Frame3>
+                <Frame4 variants={slider}></Frame4>
+            </motion.div>
             <Movie>
-                <h2>Dead Rising</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>Dead Rising</motion.h2>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/dead-rising">
-                    <img src={deadRising} alt="frank" />
+                    <Hide>
+                    <motion.img variants={photoAnim} src={deadRising} alt="frank" />
+                    </Hide>
                 </Link>
             </Movie>
             <Movie>
-                <h2>Planescape</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>Planescape</motion.h2>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/planescape-torment">
-                    <img src={planescape} alt="planescape" />
+                    <motion.img variants={photoAnim} src={planescape} alt="planescape" />
                 </Link>
             </Movie>
             <Movie>
-                <h2>theHunter</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>theHunter</motion.h2>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/theHunter">
-                    <img src={theHunter} alt="theHunter" />
+                    <motion.img variants={photoAnim} src={theHunter} alt="theHunter" />
                 </Link>
             </Movie>
         </Work>
@@ -50,7 +56,7 @@ const Movie = styled.div`
     padding-bottom: 10rem;
     .line {
         height: .5rem;
-        background: #cccccc;
+        background: #23d997;
         margin-bottom: 3rem;
     }
     img {
@@ -58,6 +64,28 @@ const Movie = styled.div`
         height: 50vh;
         object-fit: cover;
     }
+`
+
+const Frame1 = styled(motion.div)`
+    position: fixed;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 100vh;
+    background: #fffebf;
+    z-index: 2;
+`
+
+const Frame2 = styled(Frame1)`
+    background: #ff8efb;
+`
+
+const Frame3 = styled(Frame1)`
+    background: #8ed2ff;
+`
+
+const Frame4 = styled(Frame1)`
+    background: #8effa0;
 `
 
 export default OurWork
